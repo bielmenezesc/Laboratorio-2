@@ -3,7 +3,7 @@ package lab2;
 import java.util.Arrays;
 
 /**
- * Representação de uma disciplina que o estudante esta cursando.
+ * RepresentaÃ§Ã£o de uma disciplina que o estudante esta cursando.
  * 
  * @author Gabriel Menezes Cabral
  */
@@ -35,7 +35,7 @@ public class Disciplina {
 	
 	/**
 	 * Constroi uma disciplina a partir do nome dela.
-	 * Ele tambem esta determinando o tamanho do Array "notas", que no caso é de tamanho 4.
+	 * Ele tambem esta determinando o tamanho do Array "notas", que no caso Ã© de tamanho 4.
 	 * 
 	 * @param nomeDaDisciplina eh o nome da disciplina. 
 	 */
@@ -62,6 +62,13 @@ public class Disciplina {
 	public void cadastraNota(int nota, double valorNota) {
 		this.notas[nota -1] = valorNota;
 	}
+	/**
+	*Metodo responsÃ¡vel por calcular mÃ©dia das notas na dsiciplina
+	*
+	*/
+	public double calculaMedia(){
+		return (this.notas[0] + this.notas[1] + this.notas[2] + this.notas[3])/4;
+	}
 	
 	/**
 	 * Retorna um valor Booleano "true" ou "false".
@@ -71,8 +78,10 @@ public class Disciplina {
 	 * @return um valor Booleano "true" ou "false".
 	 */
 	public boolean aprovado() {
-		this.media = (this.notas[0] + this.notas[1] + this.notas[2] + this.notas[3]) / 4;
-		return media >= 7.0;
+		if ((this.calculaMedia) >= 7){
+			return true;
+		}
+		return false;
 	}
 	
 	/**
